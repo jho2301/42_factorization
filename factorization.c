@@ -12,21 +12,21 @@
 
 #include <unistd.h>
 
-#define	TRUE	1
-#define	FALSE	0
-#define	ERROR	-1
-#define	t_bool	int
+#define	TRUE		1
+#define	FALSE		0
+#define	ERROR		-1
+#define	t_bool		int
 
 void			print_str(char *str);
 void			print_int(unsigned int number);
 void			print_prime_factors(unsigned int number);
-int				arg_check(int argc, char *argv[]);
-int				validate_string(char *str);
-unsigned int	simple_atoui(char *str);
+int			arg_check(int argc, char *argv[]);
+int			validate_string(char *str);
+unsigned int		simple_atoui(char *str);
 t_bool			is_prime(unsigned int number);
 t_bool			is_factor(unsigned int candidate, unsigned int number);
 
-int				main(int argc, char *argv[])
+int			main(int argc, char *argv[])
 {
 	unsigned int	number;
 
@@ -37,7 +37,7 @@ int				main(int argc, char *argv[])
 	return (0);
 }
 
-int				arg_check(int argc, char *argv[])
+int			arg_check(int argc, char *argv[])
 {
 	if (argc == 1)
 		print_str("Please enter a argument.\n");
@@ -98,7 +98,7 @@ void			print_str(char *str)
 	write(1, str, str_len);
 }
 
-int				validate_string(char *str)
+int			validate_string(char *str)
 {
 	while (('\t' <= *str && *str <= '\r') || *str == ' ')
 		str++;
@@ -115,11 +115,11 @@ int				validate_string(char *str)
 	return (0);
 }
 
-unsigned int	simple_atoui(char *str)
+unsigned int		simple_atoui(char *str)
 {
 	unsigned int	i;
 	unsigned long	result;
-	t_bool			is_signed;
+	t_bool		is_signed;
 
 	result = 0;
 	is_signed = FALSE;
